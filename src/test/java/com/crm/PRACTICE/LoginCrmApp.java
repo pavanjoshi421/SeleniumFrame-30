@@ -16,6 +16,7 @@ public class LoginCrmApp extends BaseClass
 	  WebDriver driver=new ChromeDriver();
 	  driver.get("http://localhost:8888/");
 	  LoginPage lp=new LoginPage(driver);
-	  lp.loginToApplication("admin", "admin");	  
+	  lp.loginToApplication("admin", "admin");
+	  driver.findElement(By.xpath(""));
   }
 }
