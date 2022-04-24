@@ -48,7 +48,6 @@ public void ContactPortalInformationmodule () throws Throwable
 	//create contact and edit information
 	CreateContactPage ccp=new CreateContactPage(driver);
 	ccp.EditContact(driver, CLnameran, startdate, enddate, In);
-	//Alert alt = driver.switchTo().alert();[some times we get unhandle alert exception that time we use]
-	// alt.accept();
+	
     }
 }

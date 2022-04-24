@@ -49,6 +49,7 @@ public class ContactwithMultipleData extends BaseClass {
 			//validate
 		ContactInfoPage cip = new ContactInfoPage(driver);
 			String actHeader = cip.Contactinfopage();
+			
 			if (actHeader.contains(Lastnameran)) {
 				System.out.println("passed");
 			}

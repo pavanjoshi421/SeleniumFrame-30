@@ -3,6 +3,8 @@ package com.crm.OraganizationTests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import com.crm.GenericLibrary.BaseClass;
@@ -36,19 +38,11 @@ public class CreateOraganizationWithPropertyFileTest extends BaseClass
 	    	CreateOraganizationPage cop=new CreateOraganizationPage(driver);
 	    	cop.createNewOrg(Oragname);
 	    	
-	    	//step 6 :verification orag
+	    	//step 6 : /*Validate*/
 	    	OraganizationInfoPage oip=new OraganizationInfoPage(driver);
-	    	
 	    	String actOrgName = oip.organizationinfo();
-	    	
-	    	if(actOrgName.contains(Oragname)) 
-	    	{
-	    		System.out.println(actOrgName+"--->data verified");
-	    	}
-	    	else
-	    	{
-	    		System.out.println("data not verified");
-	    	}
-				
+			Assert.assertTrue(actOrgName.contains(Oragname), "Verifide");
+			Reporter.log("verification successful",true);
+			
 		}
 }

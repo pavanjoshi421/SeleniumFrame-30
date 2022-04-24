@@ -15,6 +15,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.crm.GenericLibrary.BaseClass;
@@ -72,9 +73,10 @@ public class CreateCampaignsTest extends BaseClass
     ccp.CreateCampaign(driver, productnameran, campaingsNameran,AssignedDD);
 			
 					
-			/*Step 10: verfify for */
+			/*Step 10: verfificaton */
     CampaignInfoPage cip=new CampaignInfoPage(driver);
-    cip.CampaignInfo();
+   String header = cip.CampaignInfo();
+   Assert.assertTrue(header.contains(campaingsNameran), "verified");
     
   }
 }

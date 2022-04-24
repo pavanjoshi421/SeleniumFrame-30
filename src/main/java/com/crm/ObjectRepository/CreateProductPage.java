@@ -352,6 +352,40 @@ public class CreateProductPage extends WebdriverUtility {
 		SerialNumEdt.sendKeys(SerialNum);
 		PartNumEdt.sendKeys(PartNum);
 		saveBtn.click();
-
+    }
+	
+	public void EditingPricingInformationProduct(String productName,String In,String Unitprice ) throws Throwable
+	{
+		ProductNameEdit.sendKeys(productName);
+		saveBtn.click();
+		ProductsLink.click();
+		search_textEdt.sendKeys(productName);
+		select(In, search_fieldDD);
+		submitBtn.click();
+		Thread.sleep(2000); 
+		EditBtn.click();
+		unit_priceEdt.clear();
+		unit_priceEdt.sendKeys(Unitprice);
+		tax1_checkBtn.click();
+		tax2_checkBtn.click();
+		tax3_checkBtn.click();
+		morecurrenciesLnk.click();
+		crmbuttonsmallBtn.click();
+		cursorpointerBtn.click();
+		Thread.sleep(2000); 
+		saveBtn.click();
+	}
+	public void EditingProductImageInformationforProduct(WebDriver driver,String productName,String In) throws Throwable  {
+		
+		ProductsLink.click();
+		search_textEdt.sendKeys(productName);
+		select(In, search_fieldDD);
+		submitBtn.click();
+		Thread.sleep(2000); 
+		EditBtn.click();
+		 WebElement upload = driver.findElement(By.id("my_file_element"));
+	     upload.sendKeys("C:\\Users\\Dell\\Pictures\\Screenshots\\Screenshot (14).png");
+	     Thread.sleep(5000);
+	     saveBtn.click();
 	}
 }

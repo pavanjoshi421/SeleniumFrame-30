@@ -1,10 +1,13 @@
 package com.crm.OraganizationTests;
 
 
+import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 import com.crm.GenericLibrary.BaseClass;
 import com.crm.ObjectRepository.CreateOraganizationPage;
 import com.crm.ObjectRepository.HomePage;
+import com.crm.ObjectRepository.OraganizationInfoPage;
 import com.crm.ObjectRepository.OraganizationsPage;
 
 //scenario-3
@@ -32,5 +35,12 @@ public void CreateHealthCareOrgtest() throws Throwable  {
 			cop.getIndustryDropDown().sendKeys(industryDD);
 			cop.getIndustryDropDown().sendKeys(TypeDD);
 			cop.getSavebtn().click();
+			
+			/*Validate*/
+			OraganizationInfoPage oip = new OraganizationInfoPage(driver);
+			String actHeader = oip.organizationinfo();
+			Assert.assertTrue(actHeader.contains(Oragname), "Verifide");
+			Reporter.log("verification successful",true);
+			
     }
 }

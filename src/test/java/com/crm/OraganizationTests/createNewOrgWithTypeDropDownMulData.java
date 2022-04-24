@@ -3,6 +3,7 @@ package com.crm.OraganizationTests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -44,16 +45,9 @@ public class createNewOrgWithTypeDropDownMulData extends BaseClass{
 			//validate 
 			OraganizationInfoPage oip = new OraganizationInfoPage(driver);
 			String actHeader = oip.organizationinfo();
-			if (actHeader.contains(orgnameran)) {
-				System.out.println("passed");
-			}
-			else
-			{
-				System.out.println("failed");
-			}
+			Assert.assertTrue(actHeader.contains(orgnameran), "Verifide");
 			Reporter.log("verification successful",true);
-			
-		}
+		  }
 		
 		@DataProvider(name = "OrgtestData")
 		public Object[][] getData() throws Throwable
@@ -61,4 +55,4 @@ public class createNewOrgWithTypeDropDownMulData extends BaseClass{
 			Object[][] data = elib.readmultipleDataFromExcel("OrgMultipleData");
 			return data;
 			}
-}
+    }

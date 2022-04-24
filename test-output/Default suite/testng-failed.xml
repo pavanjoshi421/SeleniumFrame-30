@@ -3,17 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.crm.OraganizationTests.CreateOraganizationTest">
+      <class name="com.crm.PRACTICE.HandleWindowsExp1">
         <methods>
-          <include name="CreateoraganizationTest"/>
-          <include name="closeDB"/>
-          <include name="launchbrowser"/>
-          <include name="logout"/>
-          <include name="connectDataBase"/>
-          <include name="login"/>
-          <include name="closebrowser"/>
+          <include name="window"/>
         </methods>
-      </class> <!-- com.crm.OraganizationTests.CreateOraganizationTest -->
+      </class> <!-- com.crm.PRACTICE.HandleWindowsExp1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
