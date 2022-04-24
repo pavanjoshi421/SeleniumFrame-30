@@ -23,6 +23,8 @@ public void PracticeLoginUsing() throws Throwable  {
 	HomePage hp=new HomePage(driver);
 	hp.clickonOraganizationLnk();
 	hp.getSignOutLnk();
+	hp.acceptAlert(driver);
+	System.out.println("bye tata");
 }
 	
 }
